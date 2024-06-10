@@ -10,7 +10,7 @@ class Session_Handler{
 
     public function isloggedIn(){
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true){
-            header("Location: /proj/screens/main_screen.php"); 
+            header("Location: /proj_jules/screens/main_screen.php"); 
         }
         
 
@@ -19,7 +19,7 @@ class Session_Handler{
     public function isloggedOut(){
         
         if(!isset($_SESSION['logged_in'])){
-            header("Location: /proj/index.php");
+            header("Location: /proj_jules/index.php");
         }
 
     }
@@ -31,7 +31,7 @@ class Session_Handler{
     public function userLogOut(){
         
         session_destroy();
-        header("Location: /proj/index.php");
+        header("Location: /proj_jules/index.php");
         //session_destroy(); 
     }
 

@@ -1,6 +1,6 @@
 <?php 
 
-error_reporting(0);
+error_reporting(1);
 require_once '../include/DB_Functions.php';
 require_once '../include/session_handler.php';
 $db = new DB_Functions();
@@ -14,6 +14,18 @@ if (isset($_POST['purpose']) && isset($_POST['parameters'])) {
 
     $purpose = $_POST['purpose'];
     $parameters = $_POST['parameters'];
+
+
+    if($purpose=='testingnewfunction'){
+        $result = $db->RegisterMobileStudent($parameters);
+        if($result){
+          $response['error']=FALSE;
+          $response['data_result'] = 'Hello world';
+        }else{
+            $response['error'] = TRUE;
+            $response['msg'] = 'No Data Found Please Try-Again';
+        }
+    }
 
 
     if($purpose=="testapi"){
@@ -292,9 +304,9 @@ if (isset($_POST['purpose']) && isset($_POST['parameters'])) {
 
     echo json_encode($response);
 
-    if($purpose=="getallusers"){
+    /* if($purpose=="getallusers"){
         $userlist = $db->checkConnection();
-    }
+    } */
 
 
 

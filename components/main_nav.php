@@ -1,6 +1,6 @@
 <?php 
 require_once './include/Config.php';
-$root = "/proj"; 
+$root = "/proj_jules"; 
 $projectName = explode(":",GLOBAL_PROJECT_NAME);
 ?>
 
